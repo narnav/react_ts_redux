@@ -1,11 +1,13 @@
 import { configureStore, ThunkAction, Action } from '@reduxjs/toolkit';
 import counterReducer from '../features/counter/counterSlice';
-import  studentReducer  from '../stud/studentSlice';
+import  sampSlice  from '../features/counter/sampSlice';
+import  catSlice  from '../cat_samp/catSlice';
 
 export const store = configureStore({
   reducer: {
     counter: counterReducer,
-    student:studentReducer
+    samp:sampSlice,
+    cat:catSlice
   },
 });
 

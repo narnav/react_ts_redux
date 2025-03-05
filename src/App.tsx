@@ -1,16 +1,23 @@
 import React from 'react';
-import { Counter } from './features/counter/Counter';
 import './App.css';
-import Yagor from './features/counter/Yagor';
-import CompStudent from './stud/CompStudent';
+import Cat from './cat_samp/Cat';
+import { useAppSelector } from './app/hooks';
+import { selectAge, selectCatName } from './cat_samp/catSlice'
 
 function App() {
-  return (
-    <div className="App">
-        <CompStudent></CompStudent>
-        <Counter />
-    </div>
-  );
+    const catName = useAppSelector(selectCatName);
+    const catAge = useAppSelector(selectAge);
+    return (
+        <div className="App">
+            <Cat />
+            <Cat />
+            <Cat />
+            <Cat />
+
+            <hr></hr>
+            {catName}{catAge}
+        </div>
+    );
 }
 
 export default App;
